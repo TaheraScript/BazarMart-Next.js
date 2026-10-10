@@ -6,7 +6,7 @@ import Marquee from "@/components/Marquee";
 
 const hindSiliguri = Hind_Siliguri({
   variable: "--font-hind-siliguri",
-  subsets: ["bengali"],
+  subsets: ["bengali", "latin"],
   weight: ["400", "500", "600", "700"],
 });
 
@@ -22,8 +22,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-theme="light"
       className={`${hindSiliguri.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-       <main >
+      <body className="min-h-full flex flex-col bg-[#f0f5f0]">
+       <main>
         <Header></Header>
         <Marquee></Marquee>
          {children}

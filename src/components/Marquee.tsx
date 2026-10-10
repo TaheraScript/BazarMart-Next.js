@@ -1,6 +1,6 @@
 import MarqueeText from "react-marquee-text";
 import "react-marquee-text/dist/styles.css";
-import { BsCaretUpFill, BsCaretDownFill } from "react-icons/bs";
+import { BsCaretUpFill, BsCaretDownFill, BsDash } from "react-icons/bs";
 
 interface IHeadlines {
   change: {
@@ -16,6 +16,7 @@ interface IHeadlines {
 
 const unitBn: Record<string, string> = {
   kg: "কেজি",
+  litre: "লিটার",
   liter: "লিটার",
   l: "লিটার",
   piece: "পিস",
@@ -35,7 +36,10 @@ const toBnPct = (n: number) =>
   });
 
 const Marquee = async () => {
-  const res = await fetch("https://api.abcz.workers.dev/api/bazardor/products");
+  const res = await fetch(
+    "https://openapi.programming-hero.com/api/bazardor/products",
+  );
+
   const headlines: IHeadlines[] = await res.json();
 
   return (
@@ -66,6 +70,12 @@ const Marquee = async () => {
               {item.change.dir === "down" && (
                 <span className="inline-flex items-center gap-1 font-semibold text-[#1a9951]">
                   <BsCaretDownFill />
+                  {`${toBnPct(pct)} %`}
+                </span>
+              )}
+              {item.change.dir === "flat" && (
+                <span className="inline-flex items-center gap-1 font-semibold text-[#5f6761]">
+                   <BsDash size={16} />
                   {`${toBnPct(pct)} %`}
                 </span>
               )}

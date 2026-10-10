@@ -7,8 +7,8 @@ const date = new Date().toLocaleDateString("bn-BD", {
 
 const Header = () => {
   return (
-    <header className="w-full border-b border-gray-100 max-w-7xl mx-auto">
-      <div className=" flex items-center justify-between gap-2 px-4 py-3 sm:gap-3 sm:px-6 lg:px-8 lg:py-4">
+    <header className="w-full border-b border-gray-100 bg-white">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 py-3 sm:gap-3 sm:px-6 lg:px-8 lg:py-4">
         
         <div className="flex items-center gap-2 ">
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#05893E] sm:h-10 sm:w-10 lg:h-12 lg:w-12">
