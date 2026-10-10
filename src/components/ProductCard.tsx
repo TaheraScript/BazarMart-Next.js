@@ -36,7 +36,7 @@ const ProductCard = ({ item }: { item: IProductCard }) => {
 
   return (
 
-    <Link href={`/products/${item.id}`}>
+    <Link href={`/products/${item.id}`} className="block">
     <div className="rounded-xl border border-gray-200 bg-[#fafcfa] p-6">
       <div className="flex items-center gap-3">
   

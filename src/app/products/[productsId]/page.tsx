@@ -1,16 +1,13 @@
-import React from 'react';
+import ProductDetails from "@/components/ProductDetails";
 
-const ProductsDetailPage =async({params}:{params:Promise<{productsId:string}>}) => {
-    const {productsId} =await params
-   
-    const res=await fetch(`https://openapi.programming-hero.com/api/bazardor/products/${productsId}`)
-    const product = await res.json()
-    console.log(product)
-    return (
-        <div>
-            newsdetailpage
-        </div>
-    );
+const ProductsDetailPage = async ({
+  params,
+}: {
+  params: Promise<{ productsId: string }>;
+}) => {
+  const { productsId } = await params;
+
+  return <ProductDetails id={productsId} />;
 };
 
 export default ProductsDetailPage;
